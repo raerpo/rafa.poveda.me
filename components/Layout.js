@@ -1,22 +1,36 @@
+import Head from './Head';
+import HeaderLinks from './HeaderLinks';
+import * as routes from '../routes';
 import Link from 'next/link';
 
-const Layout = ({ children }) => (
+const GlobalStyles = () => (<style jsx global>
+  {`
+     body{
+       font-family: 'Ubuntu', sans-serif, arial;
+       background-color: #dddded;
+     }
+  `}
+</style>);
+
+const buildTitle = (title) => {
+  const defaultTitle = "Rafael Poveda - Frontend Dev";
+  return title ? `${title} - ${defaultTitle}` : defaultTitle;
+}
+
+export default ({ children, title }) => (
   <main>
+    <Head title={ buildTitle(title) }/>
     <header>
       <div className="logo">
-        Rafael Poveda
+        <Link href={ routes.HOME }>
+          <a>Rafael Poveda</a>
+        </Link>
       </div>
-      <ul>
-        <li><Link><a>Work</a></Link></li>
-        <li><Link><a>Skills</a></Link></li>
-        <li><Link><a>CV</a></Link></li>
-        <li><Link><a>Blog</a></Link></li>
-      </ul>
+      <HeaderLinks />
     </header>
     <section>
       {children}
     </section>
+    <GlobalStyles />
   </main>
 );
-
-export default Layout;

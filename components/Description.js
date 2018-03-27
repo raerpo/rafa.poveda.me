@@ -1,6 +1,5 @@
-export default ({ repositories, twitterFollowers, blogEntries }) => (
+export default ({ repositories, twitterFollowers, blogEntries, yearOfExperience }) => (
   <div>
-    <p>Hello and welcome! ✋🏼</p>
     <h2>My name is <strong>Rafael Poveda</strong> and i'm a <strong>Frontend Developer</strong></h2>
     <p>
       I love creating web applications that solve real life problems with beatiful, fast and functional interfaces. 🚀
@@ -20,6 +19,10 @@ export default ({ repositories, twitterFollowers, blogEntries }) => (
       <li>
         <p>{ blogEntries }</p>
         <p>Blog entries 🤓</p>
+      </li>
+      <li>
+        <p>{ yearOfExperience }</p>
+        <p>Year of Experience 👴🏼</p>
       </li>
     </ul>
   </div>
