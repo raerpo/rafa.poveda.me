@@ -31,6 +31,16 @@ export default ({ children, title }) => (
     <section>
       {children}
     </section>
+    <style jsx>
+    {`
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        text-transform: uppercase;
+      }
+    `}
+    </style>
     <GlobalStyles />
   </main>
 );

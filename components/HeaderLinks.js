@@ -11,5 +11,18 @@ export default () => (
       </Link>
     </li>
     <li><Link><a>Blog</a></Link></li>
+    <style jsx>
+    {`
+      ul {
+        list-style: none;
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+      }
+      ul > li {
+        margin-left: 1em;
+      }
+    `}
+    </style>
   </ul>
 );
