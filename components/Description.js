@@ -1,29 +1,67 @@
-export default ({ repositories, twitterFollowers, blogEntries, yearOfExperience }) => (
-  <div>
-    <h2>My name is <strong>Rafael Poveda</strong> and i'm a <strong>Frontend Developer</strong></h2>
+import fetch from 'isomorphic-unfetch';
+
+const Description = ({ repositories, twitterFollowers, blogEntries, yearOfExperience }) => {
+  return <div className="description">
+    <h2>My name is <strong>Rafael Poveda</strong> and I'm a <strong>Frontend Developer</strong></h2>
     <p>
       I love creating web applications that solve real life problems with beatiful, fast and functional interfaces. 🚀
     </p>
     <p>
       I'm in ❤️ with Javascript and Typescript either in the client and in the server.
     </p>
-    <ul>
+    <ul className="description_counters">
       <li>
-        <p>{ repositories }</p>
+        <p className="description_counter">{ repositories }</p>
         <p>Repositories on Github 🐙</p>
       </li>
       <li>
-        <p>{ twitterFollowers }</p>
+        <p className="description_counter">{ twitterFollowers }</p>
         <p>Followers on Twitter where i talk about tech 🤖</p>
       </li>
       <li>
-        <p>{ blogEntries }</p>
+        <p className="description_counter">{ blogEntries }</p>
         <p>Blog entries 🤓</p>
       </li>
       <li>
-        <p>{ yearOfExperience }</p>
+        <p className="description_counter">{ yearOfExperience }</p>
         <p>Year of Experience 👴🏼</p>
       </li>
     </ul>
+    <style jsx>
+      {`
+        .description {
+          width: 70%;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 1.2em;
+          padding-top: 3em;
+        }
+        h2 {
+          font-size: 2em;
+          width: 50%;
+          margin: 0 auto 2.5em auto;
+        }
+        .description_counters {
+          list-style: none;
+          margin: 5em 0px 0px 0px;
+          padding: 0px;
+          display: flex;
+          justify-content: space-evenly;
+        }
+        li {
+          text-align: center;
+          margin-right: 2em;
+          max-width: 20%;
+        }
+        li > p {
+          margin: 0px;
+        }
+        li > .description_counter {
+          font-size: 2em;
+        }
+      `}
+    </style>
   </div>
-);
+};
+
+export default Description;

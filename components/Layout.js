@@ -7,7 +7,9 @@ const GlobalStyles = () => (<style jsx global>
   {`
      body{
        font-family: 'Ubuntu', sans-serif, arial;
-       background-color: #dddded;
+       color: #494C4E;
+       -webkit-font-smoothing: antialiased;
+       background-color: #f8f7fc;
      }
   `}
 </style>);
