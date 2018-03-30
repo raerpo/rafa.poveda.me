@@ -36,10 +36,14 @@ const Description = ({ repositories, twitterFollowers, blogEntries, yearOfExperi
           font-size: 1.2em;
           padding-top: 3em;
         }
+        .description > p {
+          width: 70%;
+          margin: 0 auto;
+        }
         h2 {
-          font-size: 2em;
-          width: 50%;
-          margin: 0 auto 2.5em auto;
+          font-size: 2.5em;
+          margin: 0 auto 2em auto;
+          font-weight: 100;
         }
         .description_counters {
           list-style: none;
