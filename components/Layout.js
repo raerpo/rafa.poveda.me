@@ -5,11 +5,23 @@ import Link from 'next/link';
 
 const GlobalStyles = () => (<style jsx global>
   {`
-     body{
+     body {
        font-family: 'Ubuntu', sans-serif, arial;
        color: #494C4E;
        -webkit-font-smoothing: antialiased;
        background-color: #f8f7fc;
+     }
+     .highlight {
+       position: relative;
+     }
+     .highlight:before {
+      content: '';
+      background-color: rgba(255, 107, 75, .8);
+      width: 100%;
+      height: .08em;
+      position: absolute;
+      top: 1em;
+      transform: rotate(-1deg);
      }
   `}
 </style>);

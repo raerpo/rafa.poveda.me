@@ -2,7 +2,7 @@ import fetch from 'isomorphic-unfetch';
 
 const Description = ({ repositories, twitterFollowers, blogEntries, yearOfExperience }) => {
   return <div className="description">
-    <h2>My name is <strong>Rafael Poveda</strong> and I'm a <strong>Frontend Developer</strong></h2>
+    <h2>My name is <strong className="highlight">Rafael Poveda</strong> and I'm a <br/> <strong className="highlight">Frontend Developer</strong></h2>
     <p>
       I love creating web applications that solve real life problems with beatiful, fast and functional interfaces. 🚀
     </p>
@@ -37,7 +37,7 @@ const Description = ({ repositories, twitterFollowers, blogEntries, yearOfExperi
           padding-top: 3em;
         }
         .description > p {
-          width: 70%;
+          width: 50%;
           margin: 0 auto;
         }
         h2 {
