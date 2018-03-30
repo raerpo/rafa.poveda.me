@@ -21,7 +21,6 @@ const GlobalStyles = () => (<style jsx global>
       height: .08em;
       position: absolute;
       top: 1em;
-      transform: rotate(-1deg);
      }
   `}
 </style>);
@@ -37,7 +36,7 @@ export default ({ children, title }) => (
     <header>
       <div className="logo">
         <Link href={ routes.HOME }>
-          <a>Rafael Poveda</a>
+          <a>🏠</a>
         </Link>
       </div>
       <HeaderLinks />
@@ -52,6 +51,10 @@ export default ({ children, title }) => (
         justify-content: space-between;
         padding: 2rem;
         text-transform: uppercase;
+      }
+      .logo a {
+        color: #494C4E;
+        font-size: 2em;
       }
     `}
     </style>

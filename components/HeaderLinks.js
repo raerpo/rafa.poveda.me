@@ -3,14 +3,16 @@ import * as routes from '../routes';
 
 export default () => (
   <ul>
-    <li><Link><a>Work</a></Link></li>
-    <li><Link><a>Skills</a></Link></li>
     <li>
       <Link href={ routes.CV }>
         <a>CV</a>
       </Link>
     </li>
-    <li><Link><a>Blog</a></Link></li>
+    <li>
+      <Link href={ routes.BLOG }>
+        <a>Blog</a>
+      </Link>
+    </li>
     <style jsx>
     {`
       ul {
@@ -21,6 +23,9 @@ export default () => (
       }
       ul > li {
         margin-left: 1em;
+      }
+      ul > li > a {
+        color: #f53a11;
       }
     `}
     </style>
