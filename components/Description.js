@@ -4,7 +4,7 @@ const Description = ({ repositories, twitterFollowers, blogEntries, yearOfExperi
   return <div className="description">
     <h2>My name is <strong className="highlight">Rafael Poveda</strong> and I'm a <br/> <strong className="highlight">Frontend Developer</strong></h2>
     <p>
-      I love creating web applications that solve real life problems with beatiful, fast and functional interfaces. 🚀
+      I love creating web applications that solve real life problems with fast, functional, and well written interfaces. 🚀
     </p>
     <p>
       I'm in ❤️ with Javascript and Typescript either in the client and in the server.
@@ -50,18 +50,60 @@ const Description = ({ repositories, twitterFollowers, blogEntries, yearOfExperi
           margin: 5em 0px 0px 0px;
           padding: 0px;
           display: flex;
-          justify-content: space-evenly;
+          flex-flow: wrap;
+          justify-content: center;
         }
-        li {
+        .description_counters li {
           text-align: center;
-          margin-right: 2em;
-          max-width: 20%;
+          padding: 0px 1em;
+          width: 20%;
+          border-right: 1px solid;
         }
-        li > p {
+        .description_counters li:last-child {
+          border-right: none;
+        }
+        .description_counters li > p {
           margin: 0px;
         }
-        li > .description_counter {
+        .description_counters li > .description_counter {
           font-size: 2em;
+          font-weight: bold;
+        }
+
+        @media (max-width: 1024px) { 
+          .description {
+            width: 100%;
+            padding-top: 0px;
+          }
+          h2 {
+            margin: 0 auto 1em auto;
+          }
+        }
+
+        @media (max-width: 850px) { 
+          h2 {
+            font-size: 2em;
+          }
+          .description {
+            width: 100%;
+            padding-top: 0px;
+          }
+          .description > p {
+            width: 90%;
+            margin: 0 auto;
+          }
+          .description_counters {
+            margin-top: 2em;
+          }
+          .description_counters li {
+            width: 100%;
+            padding: 1em 0px;
+            border: none;
+            border-bottom: 1px solid;
+          }
+          .description_counters li:first-child {
+            border-top: 1px solid;
+          }
         }
       `}
     </style>
