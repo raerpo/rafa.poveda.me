@@ -13,28 +13,35 @@ export default {
     },
     "profiles": [
       {
+        "network": "Email: raerpo@gmail.com",
+        "url": "mailto:raerpo@gmail.com"
+      },
+      {
+        "network": "Website: http://rafa.poveda.me",
+        "url": "mailto:raerpo@gmail.com"
+      },
+      {
+        "network": "Linkedin",
+        "url": "https://www.linkedin.com/in/raerpo/"
+      },
+      {
         "network": "Twitter",
-        "username": "raerpo",
         "url": "http://twitter.com/raerpo"
       },
       {
         "network": "Github",
-        "username": "raerpo",
         "url": "http://github.com/raerpo"
       },
       {
         "network": "Codesandbox",
-        "username": "raerpo",
         "url": "https://codesandbox.io/u/raerpo"
       },
       {
         "network": "Codepen",
-        "username": "raerpo",
         "url": "https://codepen.io/raerpo/"
       },
       {
-        "network": "Blogging",
-        "username": "raerpo",
+        "network": "Blog",
         "url": "http://rafa.poveda.me/blog"
       }
     ]
@@ -115,16 +122,18 @@ export default {
       "level": "Fluent"
     }
   ],
-  "Open source projects": [
+  "projects": [
     {
       "name": "MDNotes",
+      "url": "https://mdnotes.co/",
+      "summary": "Note taking application",
       "keywords": [
         "Firebase",
         "React"
       ]
     }
   ],
-  "Talks": [
+  "talks": [
     {
       "name": "TypeScript in the real world",
       "description": "",
