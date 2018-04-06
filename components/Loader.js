@@ -1,7 +1,7 @@
 // Loader from http://tobiasahlin.com/spinkit/
 
 const Loader = () => (
-  <div>
+  <React.Fragment>
     <div className="spinner">
       <div className="rect1"></div>
       <div className="rect2"></div>
@@ -55,7 +55,7 @@ const Loader = () => (
             
     `}
     </style>
-  </div>
+  </React.Fragment>
 )
 
 export default Loader;
