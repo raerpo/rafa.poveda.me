@@ -1,5 +1,8 @@
 import Layout from '../components/Layout';
 import CVData from '../data/CVData';
+import format from 'date-fns/format';
+
+const FORMAT_DATE = 'MMM YYYY';
 
 const renderWorks = (jobs) => {
   return jobs.map((job, index) => (
@@ -9,11 +12,37 @@ const renderWorks = (jobs) => {
       <p className="job-title">{ job.position }</p>
       <p className="job-description">{ job.summary }</p>
       <div className="job-dates">
-        <span className="start-date">{ job.startDate }</span>
-        <span className="end-date">{ job.endDate }</span>
+        <span className="start-date">{ format(job.startDate, FORMAT_DATE) }</span>
+        <span className="end-date">{ job.endDate === 'Present' ? job.endDate : format(job.endDate, FORMAT_DATE) }</span>
       </div>
+      <style jsx>
+        {`
+          .cv-work-place {
+            margin-bottom: 2em;
+          }
+          .company {
+            margin: 0px;
+          }
+          .job-title {
+            margin: .2em 0px 0px 0px;
+            font-size: .95em;
+          }
+          .job-dates {
+            font-size: .9em;
+          }
+          .job-dates .start-date {
+            display: block;
+          }
+          .job-dates .start-date:before {
+            content: 'From: ';
+          }
+          .job-dates .end-date:before {
+            content: 'Until: ';
+          }
+        `}
+      </style>
     </div>
-  ));
+  )).reverse();
 }
 
 const renderEducation = (studies) => {
@@ -97,7 +126,7 @@ export default () => {
         </div>
 
         <div className="cv-section">
-          <h3>What have i done?</h3>
+          <h3>Where have i worked?</h3>
           { renderWorks(work) }
         </div>
 
@@ -127,13 +156,44 @@ export default () => {
     <style jsx>
       {`
         .cv-wrapper {
-          width: 70%;
+          width: 215mm;
           margin: 0 auto;
           background: white;
           padding: 4rem 5rem;
           box-sizing: border-box;
           min-height: 80vh;
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+        .cv-title {
+          text-align: center;
+          margin-bottom: 3em;
+        }
+        .cv-title > h1 {
+          font-size: 2em;
+        }
+        .cv-title > p {
+          text-transform: uppercase;
+          font-size: .9em;
+        }
+        .cv-title > * {
+          margin: 0px;
+        }
+        .cv-sections {
+          columns: 2;
+          column-gap: 3em;
+          column-rule: 1px solid rgba(0, 0, 0, 0.3);
+        }
+        .cv-section{
+          margin-bottom: 2em;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+          padding-bottom: 1em;
+        }
+        .cv-section h3 {
+          margin: 0 0 .7em 0;
+          font-size: 1.3em;
+        }
+        .cv-section p {
+          margin: 0px;
         }
       `}
     </style>

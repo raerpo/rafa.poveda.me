@@ -99,7 +99,7 @@ export default class extends React.Component {
           font-weight: bold;
         }
 
-        @media (max-width: 1024px) { 
+        @media (max-width: 1140px) { 
           .description {
             width: 100%;
             padding-top: 0px;

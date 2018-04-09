@@ -48,7 +48,7 @@ export default {
   },
   "work": [
     {
-      "company": "Falabella Colombia S.A - Falabella.com",
+      "company": "Falabella.com Colombia",
       "position": "Frontend Developer",
       "website": "https://www.falabella.com.co",
       "startDate": "2013-03-01",
@@ -59,7 +59,7 @@ export default {
       ]
     },
     {
-      "company": "Falabella Colombia S.A - Falabella.com",
+      "company": "Falabella.com Colombia",
       "position": "Lead Developer",
       "website": "https://www.falabella.com.co",
       "startDate": "2014-10-01",
