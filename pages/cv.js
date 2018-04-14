@@ -27,7 +27,7 @@ export default () => {
 
         <div className="cv-section">
           <h3>Who am i?</h3>
-          <p>{ basics.summary }</p>
+          <p className="cv-summary">{ basics.summary }</p>
         </div>
 
         <div className="cv-section">
@@ -83,8 +83,8 @@ export default () => {
         .cv-title > * {
           margin: 0px;
         }
-        .cv-sections {
-
+        .cv-summary {
+          text-align: justify;
         }
         .cv-section{
           margin-bottom: 2em;
@@ -133,6 +133,7 @@ const renderWorks = (jobs) => {
           }
           .job-description {
             font-size: .85em;
+            text-align: justify;
           }
           .job-dates {
             font-size: .85em;
@@ -172,9 +173,30 @@ const renderEducation = (studies) => {
         <p className="career">{ study.area }</p>
         { study.project && <p className="study-project">{ study.project.name } - { study.project.grade }</p> }
         <div className="study-dates">
-          <span className="initial-date">{ study.startDate }</span>
+          <span className="start-date">{ study.startDate }</span>
           <span className="end-date">{ study.endDate }</span>
         </div>
+        <style jsx>
+        {`
+          .university {
+            color: hsl(204, 3%, 35%);
+          }
+          .study-dates {
+            font-size: .85em;
+          }
+          .study-dates .start-date {
+            display: block;
+          }
+          .study-dates .start-date:before {
+            content: 'From: ';
+            font-weight: bolder;
+          }
+          .study-dates .end-date:before {
+            content: 'Until: ';
+            font-weight: bolder;
+          }
+        `}
+        </style>
     </div>
   ));
 };

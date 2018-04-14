@@ -99,7 +99,7 @@ export default {
     "startDate": "2006-07-01",
     "endDate": "2013-07-01",
     "project": {
-      "name": "Estimación del foco de atención visual por medio de tecnicas de visión artificial",
+      "name": "\"Estimación del foco de atención visual por medio de tecnicas de visión artificial\"",
       "grade": "4.8/5.0"
     }
   }],
