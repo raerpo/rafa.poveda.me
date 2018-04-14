@@ -1,3 +1,5 @@
+const workedYears = Math.floor(((new Date() - new Date(2013, 2, 1)) / (1000 * 60 * 60 * 24 * 365)));
+
 export default {
   "basics": {
     "name": "Rafael Poveda",
@@ -41,7 +43,7 @@ export default {
         "url": "https://codepen.io/raerpo/"
       },
       {
-        "network": "Blog",
+        "network": "Awesome blog",
         "url": "http://rafa.poveda.me/blog"
       }
     ]
@@ -126,17 +128,41 @@ export default {
     {
       "name": "MDNotes",
       "url": "https://mdnotes.co/",
-      "summary": "Note taking application",
-      "keywords": [
+      "repository": "https://github.com/raerpo/mdnotes",
+      "summary": "Markdown note taking application in real time that sync all notes across devices",
+      "techs": [
         "Firebase",
         "React"
       ]
-    }
+    },
+    {
+      "name": "World Capitals",
+      "url": "https://react-capitals.netlify.com/",
+      "repository": "https://github.com/raerpo/capitals-game",
+      "summary": "Super simple trivia game to learn the capital cities of the world",
+      "techs": [
+        "TypeScript",
+        "React",
+        "Styled Components"
+      ]
+    },
+    {
+      "name": "Chipfly",
+      "url": "https://chipfly.co",
+      "repository": "https://github.com/raerpo/chipfly",
+      "summary": "Get the cheapest flight from Santiago, Chile to a few cities. No matter when, just the smallest price",
+      "techs": [
+        "Next.js",
+        "React",
+        "Styled Components",
+        "TypeScript"
+      ]
+    },
   ],
   "talks": [
     {
       "name": "TypeScript in the real world",
-      "description": "",
+      "description": "Introductory level talk for Noders Chile about TypeScript and how it's benefits for Frontend Development.",
       "date": "",
       "url": "https://revealjs-rsnoaqtlel.now.sh/",
       "keywords": [
@@ -146,7 +172,7 @@ export default {
     },
     {
       "name": "TypeScript and why you should be using it...",
-      "description": "",
+      "description": "How can TypeScript can increase productivity between Backend and Frontend developers that use JavaScript and main language. This talk was part of the *Tech Talks* series in Adessa Falabella.",
       "date": "",
       "url": "http://slides.com/raerpo/tech-talk-typescript#/",
       "keywords": [
