@@ -185,13 +185,21 @@ const renderOpenSourceProjects = (projects) => {
   return projects.map((project, index) => (
     <div className="cv-project">
       <h4 className="project-name">{ project.name }</h4>
-      <a href={ project.url }>{ project.url }</a>
+      <a className="url-demo"href={ project.url }>{ project.url }</a>
+      <a className="url-repository" href={ project.repository }>{ project.repository }</a>
       <p className="project-description">
         { project.summary }
       </p>
       <ul className="techs">
-        { project.keywords.map((keyword, index) => <li key={index}> { keyword } </li> ) }
+        { project.techs.map((keyword, index) => <li key={index}> { keyword } </li> ) }
       </ul>
+      <style jsx>
+        {`
+          .url-demo, .url-repository {
+            display: block;
+          }
+        `}
+      </style>
     </div>
   ));
 }

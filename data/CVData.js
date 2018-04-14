@@ -8,7 +8,7 @@ export default {
     "email": "raerpo@gmail.com",
     "phone": "+56996665537",
     "website": "http://rafa.poveda.me",
-    "summary": "Awesome Description",
+    "summary": `Hi!, i'm a Frontend developer that loves working with web technologies. I like learning all i possibly can about JavaScript and all it's surrounding environment. I've been working for more than ${workedYears} years creating web experience on different type of industries.`,
     "location": {
       "city": "Santiago",
       "countryCode": "CL"
