@@ -165,8 +165,18 @@ const renderContact = (profiles) => {
   return profiles.map((profile, index) => (
     <div className="cv-profile" key={index}>
         <a href={ profile.url }>
-          <h4 className="university">{ profile.network }</h4>
+          { profile.network }
         </a>
+        <style jsx>
+        {`
+          .cv-profile a {
+            display: block;
+            color: inherit;
+            margin: 0px 0px .5em 0px;
+            font-weight: 100;
+          }
+        `}
+        </style>
     </div>
   ));
 }
