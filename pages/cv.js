@@ -84,9 +84,7 @@ export default () => {
           margin: 0px;
         }
         .cv-sections {
-          columns: 2;
-          column-gap: 3em;
-          column-rule: 1px solid rgba(0, 0, 0, 0.3);
+
         }
         .cv-section{
           margin-bottom: 2em;
@@ -96,6 +94,7 @@ export default () => {
         .cv-section h3 {
           margin: 0 0 .7em 0;
           font-size: 1.3em;
+          text-transform: uppercase;
         }
         .cv-section p {
           margin: 0px;
@@ -107,7 +106,7 @@ export default () => {
 };
 
 const renderWorks = (jobs) => {
-  return jobs.map((job, index) => (
+  const jobsSections = jobs.map((job, index) => (
     // It's OK to use index as key because data don't change.
     <div className="cv-work-place" key={index}>
       <h4 className="company">{ job.company }</h4>
@@ -121,30 +120,49 @@ const renderWorks = (jobs) => {
         {`
           .cv-work-place {
             margin-bottom: 2em;
+            width: calc(100% / 2 - 3em);
+            padding-right: 3em;
           }
           .company {
             margin: 0px;
+            color: hsl(204, 3%, 35%);
           }
           .job-title {
             margin: .2em 0px 0px 0px;
             font-size: .95em;
           }
+          .job-description {
+            font-size: .85em;
+          }
           .job-dates {
-            font-size: .9em;
+            font-size: .85em;
           }
           .job-dates .start-date {
             display: block;
           }
           .job-dates .start-date:before {
             content: 'From: ';
+            font-weight: bolder;
           }
           .job-dates .end-date:before {
             content: 'Until: ';
+            font-weight: bolder;
           }
         `}
       </style>
     </div>
   )).reverse();
+  return <div className="cv-work-places-wrapper">
+    { jobsSections }
+    <style jsx>
+    {`
+      .cv-work-places-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    `}
+    </style>
+  </div>
 }
 
 const renderEducation = (studies) => {
