@@ -4,101 +4,6 @@ import format from 'date-fns/format';
 
 const FORMAT_DATE = 'MMM YYYY';
 
-const renderWorks = (jobs) => {
-  return jobs.map((job, index) => (
-    // It's OK to use index as key because data don't change.
-    <div className="cv-work-place" key={index}>
-      <h4 className="company">{ job.company }</h4>
-      <p className="job-title">{ job.position }</p>
-      <p className="job-description">{ job.summary }</p>
-      <div className="job-dates">
-        <span className="start-date">{ format(job.startDate, FORMAT_DATE) }</span>
-        <span className="end-date">{ job.endDate === 'Present' ? job.endDate : format(job.endDate, FORMAT_DATE) }</span>
-      </div>
-      <style jsx>
-        {`
-          .cv-work-place {
-            margin-bottom: 2em;
-          }
-          .company {
-            margin: 0px;
-          }
-          .job-title {
-            margin: .2em 0px 0px 0px;
-            font-size: .95em;
-          }
-          .job-dates {
-            font-size: .9em;
-          }
-          .job-dates .start-date {
-            display: block;
-          }
-          .job-dates .start-date:before {
-            content: 'From: ';
-          }
-          .job-dates .end-date:before {
-            content: 'Until: ';
-          }
-        `}
-      </style>
-    </div>
-  )).reverse();
-}
-
-const renderEducation = (studies) => {
-  return studies.map((study, index) => (
-    <div className="cv-study-place" index={index}>
-      <h4 className="university">{ study.institution }</h4>
-        <p className="career">{ study.area }</p>
-        { study.project && <p className="study-project">{ study.project.name } - { study.project.grade }</p> }
-        <div className="study-dates">
-          <span className="initial-date">{ study.startDate }</span>
-          <span className="end-date">{ study.endDate }</span>
-        </div>
-    </div>
-  ));
-};
-
-const renderContact = (profiles) => {
-  return profiles.map((profile, index) => (
-    <div className="cv-profile" key={index}>
-        <a href={ profile.url }>
-          <h4 className="university">{ profile.network }</h4>
-        </a>
-    </div>
-  ));
-}
-
-const renderOpenSourceProjects = (projects) => {
-  return projects.map((project, index) => (
-    <div className="cv-project">
-      <h4 className="project-name">{ project.name }</h4>
-      <a href={ project.url }>{ project.url }</a>
-      <p className="project-description">
-        { project.summary }
-      </p>
-      <ul className="techs">
-        { project.keywords.map((keyword, index) => <li key={index}> { keyword } </li> ) }
-      </ul>
-    </div>
-  ));
-}
-
-const renderTalks = (talks) => {
-  return talks.map((talk, index) => (
-    <div className="cv-talk">
-      <h4 className="talk-name">{ talk.name }</h4>
-      <a href={ talk.url }>Slides</a>
-      <p className="project-description">
-        { talk.description }
-      </p>
-      <ul className="subjects">
-        { talk.keywords.map((keyword, index) => <li key={index}> { keyword } </li> ) }
-      </ul>
-    </div>
-  ));
-}
-
 export default () => {
   const { 
     basics, 
@@ -200,3 +105,98 @@ export default () => {
 
   </Layout>
 };
+
+const renderWorks = (jobs) => {
+  return jobs.map((job, index) => (
+    // It's OK to use index as key because data don't change.
+    <div className="cv-work-place" key={index}>
+      <h4 className="company">{ job.company }</h4>
+      <p className="job-title">{ job.position }</p>
+      <p className="job-description">{ job.summary }</p>
+      <div className="job-dates">
+        <span className="start-date">{ format(job.startDate, FORMAT_DATE) }</span>
+        <span className="end-date">{ job.endDate === 'Present' ? job.endDate : format(job.endDate, FORMAT_DATE) }</span>
+      </div>
+      <style jsx>
+        {`
+          .cv-work-place {
+            margin-bottom: 2em;
+          }
+          .company {
+            margin: 0px;
+          }
+          .job-title {
+            margin: .2em 0px 0px 0px;
+            font-size: .95em;
+          }
+          .job-dates {
+            font-size: .9em;
+          }
+          .job-dates .start-date {
+            display: block;
+          }
+          .job-dates .start-date:before {
+            content: 'From: ';
+          }
+          .job-dates .end-date:before {
+            content: 'Until: ';
+          }
+        `}
+      </style>
+    </div>
+  )).reverse();
+}
+
+const renderEducation = (studies) => {
+  return studies.map((study, index) => (
+    <div className="cv-study-place" index={index}>
+      <h4 className="university">{ study.institution }</h4>
+        <p className="career">{ study.area }</p>
+        { study.project && <p className="study-project">{ study.project.name } - { study.project.grade }</p> }
+        <div className="study-dates">
+          <span className="initial-date">{ study.startDate }</span>
+          <span className="end-date">{ study.endDate }</span>
+        </div>
+    </div>
+  ));
+};
+
+const renderContact = (profiles) => {
+  return profiles.map((profile, index) => (
+    <div className="cv-profile" key={index}>
+        <a href={ profile.url }>
+          <h4 className="university">{ profile.network }</h4>
+        </a>
+    </div>
+  ));
+}
+
+const renderOpenSourceProjects = (projects) => {
+  return projects.map((project, index) => (
+    <div className="cv-project">
+      <h4 className="project-name">{ project.name }</h4>
+      <a href={ project.url }>{ project.url }</a>
+      <p className="project-description">
+        { project.summary }
+      </p>
+      <ul className="techs">
+        { project.keywords.map((keyword, index) => <li key={index}> { keyword } </li> ) }
+      </ul>
+    </div>
+  ));
+}
+
+const renderTalks = (talks) => {
+  return talks.map((talk, index) => (
+    <div className="cv-talk">
+      <h4 className="talk-name">{ talk.name }</h4>
+      <a href={ talk.url }>Slides</a>
+      <p className="project-description">
+        { talk.description }
+      </p>
+      <ul className="subjects">
+        { talk.keywords.map((keyword, index) => <li key={index}> { keyword } </li> ) }
+      </ul>
+    </div>
+  ));
+}
