@@ -56,6 +56,11 @@ export default ({ children, title }) => (
         color: #494C4E;
         font-size: 2em;
       }
+      @media print {
+        header {
+          display: none;
+        }
+      }
     `}
     </style>
     <GlobalStyles />

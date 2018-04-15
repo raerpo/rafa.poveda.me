@@ -4,6 +4,10 @@ import format from 'date-fns/format';
 
 const FORMAT_DATE = 'MMM YYYY';
 
+const getPDFVersion = () => {
+  window.print();
+}
+
 export default () => {
   const { 
     basics, 
@@ -17,6 +21,12 @@ export default () => {
   return <Layout title="Curriculum Vitae">
 
     <section className="cv-wrapper">
+
+      <a href="" onClick={ getPDFVersion } className="pdf-download">
+        Want the PDF version?
+      </a>
+
+      <p className="call-me">Want to call me? +56996665537</p>
 
       <div className="cv-title">
         <h1>{ basics.name }</h1>
@@ -73,6 +83,27 @@ export default () => {
           box-sizing: border-box;
           min-height: 80vh;
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          position: relative;
+        }
+        .pdf-download, .call-me {
+          position: absolute;
+          right: 1em;
+          top: 1em;
+          color: inherit;
+        }
+        .call-me {
+          display: none;
+        }
+        @media print {
+          .cv-wrapper {
+            box-shadow: none;
+          }
+          .pdf-download {
+            display: none;
+          }
+          .call-me {
+            display: block;
+          }
         }
         .cv-title {
           text-align: center;
@@ -112,6 +143,7 @@ export default () => {
         .cv-section p {
           margin: 0px;
         }
+
       `}
     </style>
 
