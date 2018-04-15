@@ -94,6 +94,17 @@ export default () => {
         .call-me {
           display: none;
         }
+        @media screen and (max-width: 215mm) {
+          .cv-wrapper {
+            width: 100%;
+            box-shadow: none;
+          }
+        }
+        @media screen and (max-width: 600px) { 
+          .cv-wrapper {
+            padding: 4rem 2em;
+          }
+        }
         @media print {
           .cv-wrapper {
             box-shadow: none;
@@ -177,6 +188,14 @@ const renderWorks = (jobs) => {
         width: calc(100% / 2 - 3em);
         padding-right: 3em;
       }
+      @media screen and (max-width: 215mm) {
+        .cv-work-places-wrapper {
+          display: block;
+        }
+        .cv-work-place {
+          width: 100%;
+        }
+      }
       .company {
         margin: 0px;
         color: hsl(204, 3%, 35%);
@@ -259,6 +278,11 @@ const renderContact = (profiles) => {
       .cv-profiles-wrapper {
         column-count: 2;
       }
+      @media screen and (max-width: 215mm) {
+        .cv-profiles-wrapper {
+          column-count: 1;
+        }
+      }
       .cv-profile a {
         display: block;
         color: inherit;
@@ -297,6 +321,15 @@ const renderOpenSourceProjects = (projects) => {
       .cv-project {
         width: calc(100% / 2 - 3em);
         padding-right: 3em;
+      }
+      @media screen and (max-width: 215mm) {
+        .cv-projects-wrapper {
+          display: block;
+        }
+        .cv-project {
+          width: 100%;
+          margin-bottom: 3em;
+        }
       }
       .cv-project a {
         color: inherit;
@@ -341,6 +374,15 @@ const renderTalks = (talks) => {
       .cv-talk {
         width: calc(100% / 2 - 3em);
         padding-right: 3em;
+      }
+      @media screen and (max-width: 215mm) {
+        .cv-talks-wrapper {
+          display: block;
+        }
+        .cv-talk {
+          width: 100%;
+          margin-bottom: 3em;
+        }
       }
       .cv-talk a {
         color: inherit;
