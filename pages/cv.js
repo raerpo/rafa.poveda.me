@@ -31,7 +31,7 @@ export default () => {
       <div className="cv-title">
         <h1>{ basics.name }</h1>
         <p>{ basics.label }</p>
-        <a href={`mailto:${basics.email}`}>{ basics.email }</a>
+        <a className="email" href={`mailto:${basics.email}`}>{ basics.email }</a>
         <p className="location">Currently living in { basics.location.city }, { basics.location.country }.
           <br />
           { basics.location.countryFlag }
@@ -134,6 +134,9 @@ export default () => {
         .cv-title .location {
           font-size: 0.8em;
           margin-top: .5em;
+        }
+        .cv-title .email {
+          color: inherit;
         }
         .cv-summary {
           text-align: justify;
@@ -277,6 +280,11 @@ const renderContact = (profiles) => {
     {`
       .cv-profiles-wrapper {
         column-count: 2;
+      }
+      @media print {
+        .cv-profiles-wrapper {
+          display: none;
+        }
       }
       @media screen and (max-width: 215mm) {
         .cv-profiles-wrapper {
