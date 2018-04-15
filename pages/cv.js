@@ -306,7 +306,7 @@ const renderOpenSourceProjects = (projects) => {
   return <div className="cv-projects-wrapper">
     {
       projects.map((project, index) => (
-        <div className="cv-project">
+        <div className="cv-project" key={index}>
           <h4 className="project-name">{ project.name }</h4>
           <a className="url-demo"href={ project.url }>{ project.url }</a>
           <a className="url-repository" href={ project.repository }>{ project.repository }</a>
@@ -364,7 +364,7 @@ const renderTalks = (talks) => {
   return <div className="cv-talks-wrapper">
     {
       talks.map((talk, index) => (
-        <div className="cv-talk">
+        <div className="cv-talk" key={index}>
           <h4 className="talk-name">{ talk.name }</h4>
           <a href={ talk.url }>Slides</a>
           <p className="project-description">

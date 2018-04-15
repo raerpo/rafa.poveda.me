@@ -22,7 +22,6 @@ export default class extends React.Component {
     const yearOfExperience = ((new Date() - new Date(2013, 2, 1)) / (1000 * 60 * 60 * 24 * 365)).toFixed(2);
 
     Promise.all([githubPublicRepos, butterResponse, yearOfExperience]).then((values) => {
-      console.log(values);
       const [ githubData, butterData, yearOfExperience ] = values;
       const { public_repos: repositories, followers} = githubData;
       const { data: { meta: { count: blogEntries } } } = butterData;
