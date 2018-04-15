@@ -1,5 +1,7 @@
 import fetch from 'isomorphic-unfetch';
 import Loader from './Loader';
+import Butter from 'buttercms';
+const butter = Butter('e9ec6296fe93adcfa3629467c1acab4c5b0cc77f');
 
 export default class extends React.Component {
   state = {
@@ -13,15 +15,20 @@ export default class extends React.Component {
 
     const githubPublicRepos = fetch('https://api.github.com/users/raerpo')
       .then(res => res.json());
+    
+    const butterResponse = butter.post.list();
         
     // How many year from March 2013
     const yearOfExperience = ((new Date() - new Date(2013, 2, 1)) / (1000 * 60 * 60 * 24 * 365)).toFixed(2);
 
-    Promise.all([githubPublicRepos, yearOfExperience]).then((values) => {
-      const [ githubData, yearOfExperience ] = values;
+    Promise.all([githubPublicRepos, butterResponse, yearOfExperience]).then((values) => {
+      console.log(values);
+      const [ githubData, butterData, yearOfExperience ] = values;
       const { public_repos: repositories, followers} = githubData;
+      const { data: { meta: { count: blogEntries } } } = butterData;
       this.setState({
         repositories,
+        blogEntries,
         followers,
         yearOfExperience
       });
