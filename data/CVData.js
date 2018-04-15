@@ -6,12 +6,12 @@ export default {
     "label": "Frontend Developer",
     "picture": "",
     "email": "raerpo@gmail.com",
-    "phone": "+56996665537",
     "website": "http://rafa.poveda.me",
     "summary": `Hi!, i'm a Frontend developer that loves working with web technologies. I like learning all i possibly can about JavaScript and all it's surrounding environment. I've been working for more than ${workedYears} years creating web experience on different type of industries.`,
     "location": {
       "city": "Santiago",
-      "countryCode": "CL"
+      "country": "Chile",
+      "countryFlag": "🇨🇱"
     },
     "profiles": [
       {
@@ -164,20 +164,13 @@ export default {
       "name": "TypeScript in the real world",
       "description": "Introductory level talk for Noders Chile about TypeScript and how it's benefits for Frontend Development.",
       "date": "",
-      "url": "https://revealjs-rsnoaqtlel.now.sh/",
-      "keywords": [
-        "TypeScript",
-        "Javascript"
-      ]
+      "url": "https://revealjs-rsnoaqtlel.now.sh/"
     },
     {
       "name": "TypeScript and why you should be using it...",
       "description": "How can TypeScript can increase productivity between Backend and Frontend developers that use JavaScript and main language. This talk was part of the *Tech Talks* series in Adessa Falabella.",
       "date": "",
-      "url": "http://slides.com/raerpo/tech-talk-typescript#/",
-      "keywords": [
-        "TypeScript"
-      ]
+      "url": "http://slides.com/raerpo/tech-talk-typescript#/"
     }
   ]
 }

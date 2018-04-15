@@ -21,6 +21,11 @@ export default () => {
       <div className="cv-title">
         <h1>{ basics.name }</h1>
         <p>{ basics.label }</p>
+        <a href={`mailto:${basics.email}`}>{ basics.email }</a>
+        <p className="location">Currently living in { basics.location.city }, { basics.location.country }.
+          <br />
+          { basics.location.countryFlag }
+        </p>
       </div>
 
       <div className="cv-sections">
@@ -51,7 +56,7 @@ export default () => {
         </div>
 
         <div className="cv-section">
-          <h3>What have you talked about?</h3>
+          <h3>What have i talked about?</h3>
           { renderTalks(talks) }
         </div>
 
@@ -75,6 +80,7 @@ export default () => {
         }
         .cv-title > h1 {
           font-size: 2em;
+          text-transform: uppercase;
         }
         .cv-title > p {
           text-transform: uppercase;
@@ -83,13 +89,20 @@ export default () => {
         .cv-title > * {
           margin: 0px;
         }
+        .cv-title .location {
+          font-size: 0.8em;
+          margin-top: .5em;
+        }
         .cv-summary {
           text-align: justify;
         }
-        .cv-section{
+        .cv-section {
           margin-bottom: 2em;
           border-bottom: 1px solid rgba(0, 0, 0, 0.3);
           padding-bottom: 1em;
+        }
+        .cv-section:last-child {
+          border: none;
         }
         .cv-section h3 {
           margin: 0 0 .7em 0;
@@ -106,60 +119,57 @@ export default () => {
 };
 
 const renderWorks = (jobs) => {
-  const jobsSections = jobs.map((job, index) => (
-    // It's OK to use index as key because data don't change.
-    <div className="cv-work-place" key={index}>
-      <h4 className="company">{ job.company }</h4>
-      <p className="job-title">{ job.position }</p>
-      <p className="job-description">{ job.summary }</p>
-      <div className="job-dates">
-        <span className="start-date">{ format(job.startDate, FORMAT_DATE) }</span>
-        <span className="end-date">{ job.endDate === 'Present' ? job.endDate : format(job.endDate, FORMAT_DATE) }</span>
-      </div>
-      <style jsx>
-        {`
-          .cv-work-place {
-            margin-bottom: 2em;
-            width: calc(100% / 2 - 3em);
-            padding-right: 3em;
-          }
-          .company {
-            margin: 0px;
-            color: hsl(204, 3%, 35%);
-          }
-          .job-title {
-            margin: .2em 0px 0px 0px;
-            font-size: .95em;
-          }
-          .job-description {
-            font-size: .85em;
-            text-align: justify;
-          }
-          .job-dates {
-            font-size: .85em;
-          }
-          .job-dates .start-date {
-            display: block;
-          }
-          .job-dates .start-date:before {
-            content: 'From: ';
-            font-weight: bolder;
-          }
-          .job-dates .end-date:before {
-            content: 'Until: ';
-            font-weight: bolder;
-          }
-        `}
-      </style>
-    </div>
-  )).reverse();
   return <div className="cv-work-places-wrapper">
-    { jobsSections }
+    { 
+      jobs.map((job, index) => (
+        // It's OK to use index as key because data don't change.
+        <div className="cv-work-place" key={index}>
+          <h4 className="company">{ job.company }</h4>
+          <p className="job-title">{ job.position }</p>
+          <p className="job-description">{ job.summary }</p>
+          <div className="job-dates">
+            <span className="start-date">{ format(job.startDate, FORMAT_DATE) }</span>
+            <span className="end-date">{ job.endDate === 'Present' ? job.endDate : format(job.endDate, FORMAT_DATE) }</span>
+          </div>
+        </div>
+      )).reverse()
+    }
     <style jsx>
     {`
       .cv-work-places-wrapper {
         display: flex;
         flex-wrap: wrap;
+      }
+      .cv-work-place {
+        margin-bottom: 2em;
+        width: calc(100% / 2 - 3em);
+        padding-right: 3em;
+      }
+      .company {
+        margin: 0px;
+        color: hsl(204, 3%, 35%);
+      }
+      .job-title {
+        margin: .2em 0px 0px 0px;
+        font-size: .95em;
+      }
+      .job-description {
+        font-size: .85em;
+        text-align: justify;
+      }
+      .job-dates {
+        font-size: .85em;
+      }
+      .job-dates .start-date {
+        display: block;
+      }
+      .job-dates .start-date:before {
+        content: 'From: ';
+        font-weight: bolder;
+      }
+      .job-dates .end-date:before {
+        content: 'Until: ';
+        font-weight: bolder;
       }
     `}
     </style>
@@ -202,59 +212,111 @@ const renderEducation = (studies) => {
 };
 
 const renderContact = (profiles) => {
-  return profiles.map((profile, index) => (
-    <div className="cv-profile" key={index}>
-        <a href={ profile.url }>
-          { profile.network }
-        </a>
-        <style jsx>
-        {`
-          .cv-profile a {
-            display: block;
-            color: inherit;
-            margin: 0px 0px .5em 0px;
-            font-weight: 100;
-          }
-        `}
-        </style>
-    </div>
-  ));
+  return <div className="cv-profiles-wrapper">
+    { 
+      profiles.map((profile, index) => (
+        <div className="cv-profile" key={index}>
+            <a href={ profile.url }>
+              { profile.network }
+            </a>
+        </div>
+      ))
+    }
+    <style jsx>
+    {`
+      .cv-profiles-wrapper {
+        column-count: 2;
+      }
+      .cv-profile a {
+        display: block;
+        color: inherit;
+        margin: 0px 0px .5em 0px;
+        font-weight: 100;
+      }
+    `}
+    </style>
+  </div>
 }
 
 const renderOpenSourceProjects = (projects) => {
-  return projects.map((project, index) => (
-    <div className="cv-project">
-      <h4 className="project-name">{ project.name }</h4>
-      <a className="url-demo"href={ project.url }>{ project.url }</a>
-      <a className="url-repository" href={ project.repository }>{ project.repository }</a>
-      <p className="project-description">
-        { project.summary }
-      </p>
-      <ul className="techs">
-        { project.techs.map((keyword, index) => <li key={index}> { keyword } </li> ) }
-      </ul>
-      <style jsx>
-        {`
-          .url-demo, .url-repository {
-            display: block;
-          }
-        `}
-      </style>
-    </div>
-  ));
+  return <div className="cv-projects-wrapper">
+    {
+      projects.map((project, index) => (
+        <div className="cv-project">
+          <h4 className="project-name">{ project.name }</h4>
+          <a className="url-demo"href={ project.url }>{ project.url }</a>
+          <a className="url-repository" href={ project.repository }>{ project.repository }</a>
+          <p className="project-description">
+            { project.summary }
+          </p>
+          <ul className="techs">
+            <h4>Built with:</h4>
+            { project.techs.map((keyword, index) => <li key={index}> { keyword } </li> ) }
+          </ul>
+        </div>
+      ))
+    }
+    <style jsx>
+    {`
+      .cv-projects-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .cv-project {
+        width: calc(100% / 2 - 3em);
+        padding-right: 3em;
+      }
+      .cv-project a {
+        color: inherit;
+      }
+      .cv-project .project-name {
+        margin: 0px 0px .5em 0px;
+      }
+      .url-demo, .url-repository {
+        display: block;
+      }
+      .techs {
+        padding-left: 1em;
+      }
+      .techs h4 {
+        margin: 0px;
+        transform: translateX(-1em);
+      }
+    `}
+    </style>
+  </div>
 }
 
 const renderTalks = (talks) => {
-  return talks.map((talk, index) => (
-    <div className="cv-talk">
-      <h4 className="talk-name">{ talk.name }</h4>
-      <a href={ talk.url }>Slides</a>
-      <p className="project-description">
-        { talk.description }
-      </p>
-      <ul className="subjects">
-        { talk.keywords.map((keyword, index) => <li key={index}> { keyword } </li> ) }
-      </ul>
-    </div>
-  ));
+  return <div className="cv-talks-wrapper">
+    {
+      talks.map((talk, index) => (
+        <div className="cv-talk">
+          <h4 className="talk-name">{ talk.name }</h4>
+          <a href={ talk.url }>Slides</a>
+          <p className="project-description">
+            { talk.description }
+          </p>
+        </div>
+      ))
+    }
+    <style jsx>
+    {`
+      .cv-talks-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .cv-talk {
+        width: calc(100% / 2 - 3em);
+        padding-right: 3em;
+      }
+      .cv-talk a {
+        color: inherit;
+      }
+      .cv-talk .talk-name {
+        margin: 0px 0px .5em 0px;
+      }
+    `}
+    </style>
+  </div>
 }
