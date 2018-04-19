@@ -87,7 +87,7 @@ export default {
       "position": "Frontend Developer",
       "startDate": "2017-05-01",
       "endDate": "Present",
-      "summary": "Responsible of creating new features for the shipping part of the checkout flow making sure of having an optimal performance. Make sure of the resposity health and correct use of our Git flow.",
+      "summary": "Responsible of creating new features for the shipping part of the checkout flow making sure of having an optimal performance. Also, make sure of the repository's health and correct use of our Git workflow.",
       "highlights": [
         "Started the company"
       ]
