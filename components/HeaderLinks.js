@@ -8,11 +8,6 @@ export default () => (
         <a>CV</a>
       </Link>
     </li>
-    <li>
-      <Link href={ routes.BLOG }>
-        <a>Blog</a>
-      </Link>
-    </li>
     <style jsx>
     {`
       ul {
