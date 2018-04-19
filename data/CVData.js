@@ -66,7 +66,7 @@ export default {
       "website": "https://www.falabella.com.co",
       "startDate": "2014-10-01",
       "endDate": "2015-09-01",
-      "summary": "Leading the development team of Falabella's Colombia design team. Encharge of creating internal tools to speed up daily tasks.",
+      "summary": "Leading the development team of Falabella's Colombia design team. Responsible of creating internal tools to speed up daily tasks.",
       "highlights": [
         "Started the company"
       ]
@@ -77,7 +77,7 @@ export default {
       "website": "https://www.falabella.com",
       "startDate": "2015-09-01",
       "endDate": "2017-05-01",
-      "summary": "Encharge of helping design teams in all the countries where the company has presence to make sure that they produce beautiful client facing applications. Also, encharge of the implementation of the analytics across all Falabella's sites.",
+      "summary": "Responsible of helping design teams in all the countries where the company has presence to make sure that they produce beautiful client facing applications. Also, encharge of the implementation of the analytics across all Falabella's sites.",
       "highlights": [
         "Started the company"
       ]
@@ -87,7 +87,7 @@ export default {
       "position": "Frontend Developer",
       "startDate": "2017-05-01",
       "endDate": "Present",
-      "summary": "Encharge of creating new features for the shipping part of the checkout flow making sure of having an optimal performance. Make sure of the resposity health and correct use of our Git flow.",
+      "summary": "Responsible of creating new features for the shipping part of the checkout flow making sure of having an optimal performance. Make sure of the resposity health and correct use of our Git flow.",
       "highlights": [
         "Started the company"
       ]
