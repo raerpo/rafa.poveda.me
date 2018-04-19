@@ -77,7 +77,7 @@ export default {
       "website": "https://www.falabella.com",
       "startDate": "2015-09-01",
       "endDate": "2017-05-01",
-      "summary": "Responsible of helping design teams in all the countries where the company has presence to make sure that they produce beautiful client facing applications. Also, encharge of the implementation of the analytics across all Falabella's sites.",
+      "summary": "in charge of helping design teams in all the countries where the company has presence to make sure that they produce beautiful client facing applications. Also, responsible for the implementation of the analytics across all Falabella's sites.",
       "highlights": [
         "Started the company"
       ]
@@ -87,7 +87,7 @@ export default {
       "position": "Frontend Developer",
       "startDate": "2017-05-01",
       "endDate": "Present",
-      "summary": "Responsible of creating new features for the shipping part of the checkout flow making sure of having an optimal performance. Also, make sure of the repository's health and correct use of our Git workflow.",
+      "summary": "Responsible for creating new features for the shipping part of the checkout flow making sure of having an optimal performance. Also, make sure of the repository's health and correct use of our Git workflow.",
       "highlights": [
         "Started the company"
       ]
