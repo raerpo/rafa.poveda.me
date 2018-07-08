@@ -57,7 +57,6 @@ export default {
       "endDate": "2014-10-01",
       "summary": "Creation of landing pages and email marketing for the different Falabella's sale events",
       "highlights": [
-        "Started the company"
       ]
     },
     {
@@ -68,7 +67,6 @@ export default {
       "endDate": "2015-09-01",
       "summary": "Leading the development team of Falabella's Colombia design team. Responsible of creating internal tools to speed up daily tasks.",
       "highlights": [
-        "Started the company"
       ]
     },
     {
@@ -79,17 +77,24 @@ export default {
       "endDate": "2017-05-01",
       "summary": "in charge of helping design teams in all the countries where the company has presence to make sure that they produce beautiful client facing applications. Also, responsible for the implementation of the analytics across all Falabella's sites.",
       "highlights": [
-        "Started the company"
       ]
     },
     {
       "company": "Adessa Falabella",
       "position": "Frontend Developer",
       "startDate": "2017-05-01",
-      "endDate": "Present",
+      "endDate": "2018-06-01",
       "summary": "Responsible for creating new features for the shipping process of the checkout flow, making sure there's always an optimal performance; as well as ensuring the repository's health and correct use of our Git workflow.",
       "highlights": [
-        "Started the company"
+      ]
+    },
+    {
+      "company": "Adessa Falabella",
+      "position": "UI Lead Architect",
+      "startDate": "2017-06-01",
+      "endDate": "Present",
+      "summary": "Falabella's frontend team leader. Responsible for ensuring the quality of the falabella frontend team's developments of both the team from Chile and India.",
+      "highlights": [
       ]
     }
   ],
