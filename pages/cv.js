@@ -55,7 +55,7 @@ export default () => {
           { renderEducation(education) }
         </div>
 
-        <div className="cv-section">
+        <div className="cv-section print-hidden">
           <h3>Where you can contact me?</h3>
           { renderContact(basics.profiles) }
         </div>
@@ -114,6 +114,9 @@ export default () => {
           }
           .call-me {
             display: block;
+          }
+          .print-hidden {
+            display: none;
           }
         }
         .cv-title {
