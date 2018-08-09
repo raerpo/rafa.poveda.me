@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import CVData from '../data/CVDataEnglish';
+import CVData from '../data/CVDataSpanish';
 import format from 'date-fns/format';
 
 const FORMAT_DATE = 'MMM YYYY';
@@ -23,10 +23,10 @@ export default () => {
     <section className="cv-wrapper">
 
       <a href="" onClick={ getPDFVersion } className="pdf-download">
-        Want the PDF version?
+        ¿Versión en PDF?
       </a>
 
-      <p className="call-me">Want to call me? +56996665537</p>
+      <p className="call-me">¿Quieres llamarme? +56996665537</p>
 
       <div className="cv-title">
         <h1>{ basics.name }</h1>
@@ -41,32 +41,32 @@ export default () => {
       <div className="cv-sections">
 
         <div className="cv-section">
-          <h3>Who am i?</h3>
+          <h3>¿Quién soy?</h3>
           <p className="cv-summary">{ basics.summary }</p>
         </div>
 
         <div className="cv-section">
-          <h3>Where have i worked?</h3>
+          <h3>¿Dónde he trabajado?</h3>
           { renderWorks(work) }
         </div>
 
         <div className="cv-section">
-          <h3>What have i studied?</h3>
+          <h3>¿Qué he estudiado?</h3>
           { renderEducation(education) }
         </div>
 
         <div className="cv-section print-hidden">
-          <h3>Where you can contact me?</h3>
+          <h3>¿Dónde me puedes contactar?</h3>
           { renderContact(basics.profiles) }
         </div>
 
         <div className="cv-section">
-          <h3>Where you can see my open source work?</h3>
+          <h3>¿Dónde puedes ver mi trabajo Open Source?</h3>
           { renderOpenSourceProjects(projects) }
         </div>
 
         <div className="cv-section">
-          <h3>What have i talked about?</h3>
+          <h3>Qué charlas he dado?</h3>
           { renderTalks(talks) }
         </div>
 

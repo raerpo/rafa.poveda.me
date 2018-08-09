@@ -3,11 +3,11 @@ const workedYears = Math.floor(((new Date() - new Date(2013, 2, 1)) / (1000 * 60
 export default {
   "basics": {
     "name": "Rafael Poveda",
-    "label": "Frontend Developer",
+    "label": "Desarrollador Frontend",
     "picture": "",
     "email": "raerpo@gmail.com",
     "website": "http://rafa.poveda.me",
-    "summary": `Hi!, I'm a Frontend developer that loves working with web technologies. I like learning all I possibly can about JavaScript and all its surrounding environment. I've been working for more than ${workedYears} years creating web experience for industries of different types.`,
+    "summary": `¡Hola!, Soy un desarrollador frontend que ama trabajar con tecnologías web. Me gusta aprender todo lo que pueda acerca de Javascript y su ecosistema. He estado por más de ${workedYears} años creando experiencias web para diferentes tipos de industrias`,
     "location": {
       "city": "Santiago",
       "country": "Chile",
@@ -19,7 +19,7 @@ export default {
         "url": "mailto:raerpo@gmail.com"
       },
       {
-        "network": "Website: http://rafa.poveda.me",
+        "network": "Sitio web: http://rafa.poveda.me",
         "url": "mailto:raerpo@gmail.com"
       },
       {
@@ -51,40 +51,40 @@ export default {
   "work": [
     {
       "company": "Falabella.com Colombia",
-      "position": "Frontend Developer",
+      "position": "Programador web",
       "website": "https://www.falabella.com.co",
       "startDate": "2013-03-01",
       "endDate": "2014-10-01",
-      "summary": "Creation of landing pages and email marketing for the different Falabella's sale events",
+      "summary": "Creación de landing pages y email marketing para los diferentes eventos de Falabella.com",
       "highlights": [
       ]
     },
     {
       "company": "Falabella.com Colombia",
-      "position": "Lead Developer",
+      "position": "Coordinador de desarrollo web",
       "website": "https://www.falabella.com.co",
       "startDate": "2014-10-01",
       "endDate": "2015-09-01",
-      "summary": "Leading the development team of Falabella's Colombia design team. Responsible of creating internal tools to speed up daily tasks.",
+      "summary": "Liderar el equipo de desarrollo de Falabella.com Colombia. Responsable de la creación de herramientas para uso interno con el proposito de automatizar las tareas diarias",
       "highlights": [
       ]
     },
     {
       "company": "Falabella.com Chile",
-      "position": "Software Engineer",
+      "position": "Ingeniero de software",
       "website": "https://www.falabella.com",
       "startDate": "2015-09-01",
       "endDate": "2017-05-01",
-      "summary": "in charge of helping design teams in all the countries where the company has presence to make sure that they produce beautiful client facing applications. Also, responsible for the implementation of the analytics across all Falabella's sites.",
+      "summary": "A cargo de asesorar a los equipos de diseño de los países donde tiene presencia la compañia y asegurar que creen excelentes aplicaciones de cara al cliente. Además, responsable de la implementación de los sistemas de analítica en todos los sitios de Falabella.",
       "highlights": [
       ]
     },
     {
       "company": "Adessa Falabella",
-      "position": "Frontend Developer",
+      "position": "Desarrollador Frontend",
       "startDate": "2017-05-01",
       "endDate": "2018-06-01",
-      "summary": "Responsible for creating new features for the shipping process of the checkout flow, making sure there's always an optimal performance; as well as ensuring the repository's health and correct use of our Git workflow.",
+      "summary": "Responsable de la creación de nuevas funcionalidades para la página de despacho en el proceso de compra asegurando un desempeño optimo de la página, la salud del repositorio de código y un uso correcto del flujo de trabajo de Git.",
       "highlights": [
       ]
     },
@@ -93,14 +93,14 @@ export default {
       "position": "UI Lead Architect",
       "startDate": "2017-06-01",
       "endDate": "Present",
-      "summary": "Falabella's frontend team leader. Responsible for ensuring the quality of the falabella frontend team's developments of both the team from Chile and India.",
+      "summary": "Lider del equipo desarrollo Frontend de Falabella. Responsable de asegurar la calidad de los desarrollos del equipo Frontend tanto del equipo en Chile como en India.",
       "highlights": [
       ]
     }
   ],
   "education": [{
     "institution": "Universidad Pedagógica Nacional",
-    "area": "Electronic Engineering",
+    "area": "Licenciatura en electrónica",
     "startDate": "2006-07-01",
     "endDate": "2013-07-01",
     "project": {
@@ -109,11 +109,11 @@ export default {
     }
   }],
   "skills": [{
-    "name": "Web Development",
+    "name": "Desarrollo Web",
     "level": "Senior",
     "keywords": [
-      "HTML5 and related APIs",
-      "CSS (Sass and Stylus)",
+      "HTML5 y APIs relacionadas",
+      "CSS (Sass, LESS y Stylus)",
       "Javascript",
       "NodeJS",
       "TypeScript"
@@ -121,12 +121,12 @@ export default {
   }],
   "languages": [
     {
-      "name": "Spanish",
-      "level": "Native speaker"
+      "name": "Español",
+      "level": "Nativo"
     },
     {
-      "name": "English",
-      "level": "Fluent"
+      "name": "Inglés",
+      "level": "Fluido escrito y hablado"
     }
   ],
   "projects": [
@@ -134,7 +134,7 @@ export default {
       "name": "MDNotes",
       "url": "https://mdnotes.co/",
       "repository": "https://github.com/raerpo/mdnotes",
-      "summary": "Markdown note taking application in real time that sync all notes across devices",
+      "summary": "Aplicación para tomar notas en formato Markdown en tiempo real con sincronización en diferentes dispositivos",
       "techs": [
         "Firebase",
         "React"
@@ -144,7 +144,7 @@ export default {
       "name": "World Capitals",
       "url": "https://react-capitals.netlify.com/",
       "repository": "https://github.com/raerpo/capitals-game",
-      "summary": "Super simple trivia game to learn the capital cities of the world",
+      "summary": "Juego de preguntas y respuestas para aprender las capitales del mundo",
       "techs": [
         "TypeScript",
         "React",
@@ -155,7 +155,7 @@ export default {
       "name": "Chipfly",
       "url": "https://chipfly.co",
       "repository": "https://github.com/raerpo/chipfly",
-      "summary": "Get the cheapest flight from Santiago, Chile to a few cities. No matter when, just the smallest price",
+      "summary": "Obtener los vuelos más baratos desde Santiado de Chile hacia algunas ciudades. No importa cuando sea el viaje, solo que sea el más barato.",
       "techs": [
         "Next.js",
         "React",
@@ -167,13 +167,13 @@ export default {
   "talks": [
     {
       "name": "TypeScript in the real world",
-      "description": "Introductory level talk for Noders Chile about TypeScript and how it's benefits for Frontend Development.",
+      "description": "Charla de introducción para el grupo Noders Chile acerca de Typescript y sus beneficios en el desarrollo frontend",
       "date": "",
       "url": "https://revealjs-rsnoaqtlel.now.sh/"
     },
     {
       "name": "TypeScript and why you should be using it...",
-      "description": "How can TypeScript can increase productivity between Backend and Frontend developers that use JavaScript and main language. This talk was part of the *Tech Talks* series in Adessa Falabella.",
+      "description": "Como puede Typescript aumentar la productividad entre desarrolladores Backend y Frontend que usen Javascript como lenguaje principal. Esta charla fue parte de la seria *Tech Talks* in Adessa Falabella.",
       "date": "",
       "url": "http://slides.com/raerpo/tech-talk-typescript#/"
     }
