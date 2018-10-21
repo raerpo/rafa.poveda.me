@@ -5,10 +5,6 @@ export default class extends React.Component {
   state = {
     repositories:null, 
     followers:null,
-    // this is temporal until find out a new headless CMS.
-    // Note: set 0 to an string to avoid a false negative. 0 as a number is false in a condition
-    // so it always going to show the loader in the render method.
-    blogEntries: '0', 
     yearOfExperience:null
   }
 
@@ -32,7 +28,9 @@ export default class extends React.Component {
   }
 
   render() {
-    const { repositories, followers, blogEntries, yearOfExperience } = this.state;
+    const { mediumJSON } = this.props;
+    const { payload: { userMeta: { numberOfPostsPublished: blogEntries}} } = mediumJSON;
+    const { repositories, followers, yearOfExperience } = this.state;
     return <div className="description">
       <h2>My name is <strong className="highlight">Rafael Poveda</strong> and I'm a <br /> <strong className="highlight">Frontend Developer</strong></h2>
       <p>
