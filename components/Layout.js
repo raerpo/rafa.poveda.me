@@ -1,7 +1,10 @@
+import React from 'react';
+import Link from 'next/link';
+import ReactGA from  'react-ga';
+
 import Head from './Head';
 import HeaderLinks from './HeaderLinks';
 import * as routes from '../routes';
-import Link from 'next/link';
 
 const GlobalStyles = () => (<style jsx global>
   {`
@@ -30,39 +33,48 @@ const buildTitle = (title) => {
   return title ? `${title} - ${defaultTitle}` : defaultTitle;
 }
 
-export default ({ children, title }) => (
-  <main>
-    <Head title={ buildTitle(title) }/>
-    <header>
-      <div className="logo">
-        <Link href={ routes.HOME }>
-          <a>🏠</a>
-        </Link>
-      </div>
-      <HeaderLinks />
-    </header>
-    <section>
-      {children}
-    </section>
-    <style jsx>
-    {`
-      header {
-        display: flex;
-        justify-content: space-between;
-        padding: 2rem;
-        text-transform: uppercase;
-      }
-      .logo a {
-        color: #494C4E;
-        font-size: 2em;
-      }
-      @media print {
-        header {
-          display: none;
-        }
-      }
-    `}
-    </style>
-    <GlobalStyles />
-  </main>
-);
+export default class extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize('UA-61536258-1');
+    ReactGA.send('pageview');
+  }
+  render() {
+    const { children, title } =  this.props;
+    return (
+      <main>
+        <Head title={ buildTitle(title) }/>
+        <header>
+          <div className="logo">
+            <Link href={ routes.HOME }>
+              <a>🏠</a>
+            </Link>
+          </div>
+          <HeaderLinks />
+        </header>
+        <section>
+          {children}
+        </section>
+        <style jsx>
+        {`
+          header {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            text-transform: uppercase;
+          }
+          .logo a {
+            color: #494C4E;
+            font-size: 2em;
+          }
+          @media print {
+            header {
+              display: none;
+            }
+          }
+        `}
+        </style>
+        <GlobalStyles />
+      </main>
+    )
+  }
+}

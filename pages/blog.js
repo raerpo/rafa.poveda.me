@@ -5,7 +5,7 @@ import format from 'date-fns/format';
 
 const Blog = ({ response }) => {
   const { data: { data: blogData } } = response;
-  return <Layout>
+  return <Layout title="Blog">
     { blogData.map(entry => (
       <div key={entry.created}>
         <h2>{ entry.title }</h2>

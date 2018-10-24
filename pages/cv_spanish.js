@@ -18,7 +18,7 @@ export default () => {
     projects, 
     talks } = CVData;
 
-  return <Layout title="Curriculum Vitae">
+  return <Layout title="Curriculum Vitae español">
 
     <section className="cv-wrapper">
 
