@@ -96,6 +96,16 @@ export default {
       "summary": "Lider del equipo desarrollo Frontend de Falabella. Responsable de asegurar la calidad de los desarrollos del equipo Frontend tanto del equipo en Chile como en India.",
       "highlights": [
       ]
+    },
+    {
+      "company": "Mediastream",
+      "position": "React Developer",
+      "website": "https://www.mediastre.am/",
+      "startDate": "2018-11-26",
+      "endDate": "Present",
+      "summary": "Desarrollador React del equipo OTT.",
+      "highlights": [
+      ]
     }
   ],
   "education": [{

@@ -92,8 +92,18 @@ export default {
       "company": "Adessa Falabella",
       "position": "UI Lead Architect",
       "startDate": "2017-06-01",
-      "endDate": "Present",
+      "endDate": "2018-11-26",
       "summary": "Falabella's frontend team leader. Responsible for ensuring the quality of the falabella frontend team's developments of both the team from Chile and India.",
+      "highlights": [
+      ]
+    },
+    {
+      "company": "Mediastream",
+      "position": "React Developer",
+      "website": "https://www.mediastre.am/",
+      "startDate": "2018-11-26",
+      "endDate": "Present",
+      "summary": "React developer for the OTT team.",
       "highlights": [
       ]
     }
