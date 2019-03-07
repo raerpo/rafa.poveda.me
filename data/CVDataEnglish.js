@@ -142,7 +142,7 @@ export default {
   "projects": [
     {
       "name": "MDNotes",
-      "url": "https://mdnotes.co/",
+      "url": "https://mdnotes-b0ddf.firebaseapp.com/",
       "repository": "https://github.com/raerpo/mdnotes",
       "summary": "Markdown note taking application in real time that sync all notes across devices",
       "techs": [
