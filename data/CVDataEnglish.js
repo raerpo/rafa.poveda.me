@@ -102,8 +102,18 @@ export default {
       "position": "React Developer",
       "website": "https://www.mediastre.am/",
       "startDate": "2018-11-26",
-      "endDate": "Present",
+      "endDate": "2019-04-01",
       "summary": "React developer for the OTT team.",
+      "highlights": [
+      ]
+    },
+    {
+      "company": "Cornershop",
+      "position": "Frontend developer",
+      "website": "https://cornershopapp.com",
+      "startDate": "2019-04-01",
+      "endDate": "Currently",
+      "summary": "Frontend developer in the shoppers team.",
       "highlights": [
       ]
     }

@@ -106,6 +106,16 @@ export default {
       "summary": "Desarrollador React del equipo OTT.",
       "highlights": [
       ]
+    },
+    {
+      "company": "Cornershop",
+      "position": "Frontend developer",
+      "website": "https://cornershopapp.com",
+      "startDate": "2019-04-01",
+      "endDate": "Currently",
+      "summary": "Frontend developer en el area de shoppers.",
+      "highlights": [
+      ]
     }
   ],
   "education": [{
