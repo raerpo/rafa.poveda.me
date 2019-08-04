@@ -3,5 +3,5 @@ This is the repo for my personal web page. It's completly based on Next.js and R
 
 #### Installation
 
-- `yarn install`
+- `yarn`
 - `yarn dev`
