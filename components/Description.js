@@ -28,8 +28,7 @@ export default class extends React.Component {
   }
 
   render() {
-    const { mediumJSON } = this.props;
-    const { payload: { userMeta: { numberOfPostsPublished: blogEntries}} } = mediumJSON;
+    const { blogData } = this.props;
     const { repositories, followers, yearOfExperience } = this.state;
     return <div className="description">
       <h2>My name is <strong className="highlight">Rafael Poveda</strong> and I'm a <br /> <strong className="highlight">Frontend Developer</strong></h2>
@@ -45,7 +44,7 @@ export default class extends React.Component {
           <p>Repositories on Github 🐙</p>
         </li>
         <li>
-          <div className="description_counter">{blogEntries || <Loader />}</div>
+          <div className="description_counter">{blogData.length || <Loader />}</div>
           <p>Blog entries 🤓</p>
         </li>
         <li>
