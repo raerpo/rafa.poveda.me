@@ -1,4 +1,6 @@
-const workedYears = Math.floor(((new Date() - new Date(2013, 2, 1)) / (1000 * 60 * 60 * 24 * 365)));
+const workedYears = Math.floor(
+  (new Date() - new Date(2013, 2, 1)) / (1000 * 60 * 60 * 24 * 365)
+);
 
 const cvData = {
   basics: {
@@ -55,7 +57,8 @@ const cvData = {
       website: "https://www.falabella.com.co",
       startDate: "2013-03-01",
       endDate: "2014-10-01",
-      summary: "",
+      summary:
+        "I worked as the first frontend developer for Falabella's marketing team in Colombia. I was responsible of creating the markup of lannding pages designed by the design team and email marketing as well.",
       highlights: [],
     },
     {
@@ -64,8 +67,12 @@ const cvData = {
       website: "https://www.falabella.com.co",
       startDate: "2014-10-01",
       endDate: "2015-09-01",
-      summary: "",
-      highlights: [],
+      summary:
+        "Lead frontend developer for Falabella's marketing team in Colombia. I was in charge of creating the landing pages for the hard sales events and internal tools that facilitate the work in all teas. Led a small team of two frontend junior developers helping them to create small applications and responsive email templates.",
+      highlights: [
+        "I created an internal CMS for hard sale events like CyberMonday and Black Friday managed the commertial team with Django and Angular.js. This application reduced the amount of time nedeed to create an event from 2 days to a couple of hours.",
+        "I developed a small jQuery utility to create banners with multiple internal links on them with an integration to our internal analytics tool.",
+      ],
     },
     {
       company: "Falabella.com Chile",
@@ -89,7 +96,8 @@ const cvData = {
       position: "UI Lead Architect",
       startDate: "2017-06-01",
       endDate: "2018-11-26",
-      summary: "Falabella's frontend team leader. Responsible for ensuring the quality of the falabella frontend team's developments of both the team from Chile and India.",
+      summary:
+        "Falabella's frontend team leader. Responsible for ensuring the quality of the falabella frontend team's developments of both the team from Chile and India.",
       highlights: [],
     },
     {
@@ -125,8 +133,15 @@ const cvData = {
       website: "https://cornershopapp.com",
       startDate: "2021-04-01",
       endDate: null,
-      summary: "",
-      highlights: [],
+      summary:
+        "Technical leader of a group of 14 frontend developers working for internal applications.",
+      highlights: [
+        "Work closely with HR team to hire new frontend developers for the company",
+        "Do 1:1 feedback meetings with developers",
+        "Decide the arquitecture and tech stack of new projects",
+        "Maintain the internal NPM registry of the company",
+        "Create a maintain internal tools for other developers within the company",
+      ],
     },
   ],
   education: [

@@ -178,6 +178,13 @@ const renderWorkExperience = (jobs) => {
               <h4 className="company">{job.company}</h4>
               <p className="job-title">{job.position}</p>
               <p className="job-description">{job.summary}</p>
+              {job.highlights && job.highlights.length > 0 && (
+                <ul className="job-highlights">
+                  {job.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              )}
               <div className="job-dates">
                 <span className="start-date">
                   {format(parseISO(`${job.startDate}T00:00:00`), FORMAT_DATE)}
@@ -209,7 +216,7 @@ const renderWorkExperience = (jobs) => {
             width: 25px;
             height: 25px;
             display: block;
-            transform: rotate(-90deg) translateX(1rem);            
+            transform: rotate(-90deg) translateX(1rem);
           }
           .cv-work-place:first-child:before {
             display: none;
@@ -225,6 +232,11 @@ const renderWorkExperience = (jobs) => {
           .job-description {
             font-size: 0.85em;
             text-align: justify;
+          }
+          .job-highlights {
+            font-size: 0.85em;
+            padding: 0;
+            padding-left: 1rem;
           }
           .job-dates {
             font-size: 0.85em;
@@ -350,7 +362,7 @@ const renderOpenSourceProjects = (projects) => {
           .cv-project {
             width: calc(100% / 2 - 3em);
             padding-right: 3em;
-            margin-bottom: .5rem;
+            margin-bottom: 0.5rem;
           }
           @media screen and (max-width: 215mm) {
             .cv-projects-wrapper {
@@ -380,11 +392,11 @@ const renderOpenSourceProjects = (projects) => {
             height: 20px;
             background-repeat: no-repeat;
             background-size: cover;
-            margin-right: .3rem;
+            margin-right: 0.3rem;
             transform: translateY(0.2rem);
           }
           [class*="url-"] {
-            margin-bottom: .4rem;
+            margin-bottom: 0.4rem;
           }
           .url-demo:before {
             background-image: url("/link.svg");

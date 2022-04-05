@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Link from "next/link";
 import ReactGA from "react-ga";
 
@@ -35,48 +35,45 @@ const buildTitle = (title) => {
   return title ? `${title} - ${defaultTitle}` : defaultTitle;
 };
 
-class Layout extends React.Component {
-  componentDidMount() {
+const Layout = ({ children, title }) => {
+  useLayoutEffect(() => {
     ReactGA.initialize("UA-61536258-1");
     ReactGA.send("pageview");
-  }
-  render() {
-    const { children, title } = this.props;
-    return (
-      <main>
-        <Head title={buildTitle(title)} />
-        <header>
-          <div className="logo">
-            <Link href={routes.HOME}>
-              <a>🏠</a>
-            </Link>
-          </div>
-          <HeaderLinks />
-        </header>
-        <section>{children}</section>
-        <style jsx>
-          {`
+  });
+  return (
+    <main>
+      <Head title={buildTitle(title)} />
+      <header>
+        <div className="logo">
+          <Link href={routes.HOME}>
+            <a>🏠</a>
+          </Link>
+        </div>
+        <HeaderLinks />
+      </header>
+      <section>{children}</section>
+      <style jsx>
+        {`
+          header {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            text-transform: uppercase;
+          }
+          .logo a {
+            color: #494c4e;
+            font-size: 2em;
+          }
+          @media print {
             header {
-              display: flex;
-              justify-content: space-between;
-              padding: 2rem;
-              text-transform: uppercase;
+              display: none;
             }
-            .logo a {
-              color: #494c4e;
-              font-size: 2em;
-            }
-            @media print {
-              header {
-                display: none;
-              }
-            }
-          `}
-        </style>
-        <GlobalStyles />
-      </main>
-    );
-  }
-}
+          }
+        `}
+      </style>
+      <GlobalStyles />
+    </main>
+  );
+};
 
 export default Layout;
