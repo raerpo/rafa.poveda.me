@@ -123,16 +123,7 @@ const cvData = {
       position: "Technical Leader Frontend",
       website: "https://cornershopapp.com",
       startDate: "2020-08-01",
-      endDate: "2021-03-31",
-      summary: "",
-      highlights: [],
-    },
-    {
-      company: "Cornershop by Uber",
-      position: "Engineering manager",
-      website: "https://cornershopapp.com",
-      startDate: "2021-04-01",
-      endDate: null,
+      endDate: "2022-03-31",
       summary:
         "Technical leader of a group of 14 frontend developers working for internal applications.",
       highlights: [
@@ -141,7 +132,16 @@ const cvData = {
         "Decide the arquitecture and tech stack of new projects",
         "Maintain the internal NPM registry of the company",
         "Create a maintain internal tools for other developers within the company",
-      ],
+      ]
+    },
+    {
+      company: "Cornershop by Uber",
+      position: "Engineering manager",
+      website: "https://cornershopapp.com",
+      startDate: "2022-04-01",
+      endDate: null,
+      summary: "",
+      highlights: [],
     },
   ],
   education: [
