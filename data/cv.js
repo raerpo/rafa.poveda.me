@@ -140,8 +140,13 @@ const cvData = {
       website: "https://cornershopapp.com",
       startDate: "2022-04-01",
       endDate: null,
-      summary: "",
-      highlights: [],
+      summary: "As an engineering manager I coordinate and oversee the technical decisions of an internal product in the company. Also, I manage a multi disciplinary team of engineers working for an internal product",
+      highlights: [
+        "Estimate engineering efforts for upcoming projects",
+        "Evaluate technical feasibility",
+        "Hire new engineers",
+        "Take care of bugs and work closely with engineers to reduce technical debt"
+      ],
     },
   ],
   education: [
