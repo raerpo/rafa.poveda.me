@@ -136,13 +136,25 @@ const cvData = {
       position: "Engineering manager",
       website: "https://cornershopapp.com",
       startDate: "2022-04-01",
-      endDate: null,
+      endDate: "2022-08-01",
       summary: "As an engineering manager I coordinate and oversee the technical decisions of an internal product in the company. Also, I manage a multi disciplinary team of engineers working for an internal product",
       highlights: [
         "Estimate engineering efforts for upcoming projects",
         "Evaluate technical feasibility",
         "Hire new engineers",
         "Take care of bugs and work closely with engineers to reduce technical debt"
+      ],
+    },
+    {
+      company: "Uber",
+      position: "Software engineer",
+      website: "https://uber.com",
+      startDate: "2022-08-01",
+      endDate: null,
+      summary: "Frontend developer for Uber working on Cornershop's products",
+      highlights: [
+        "I worked as part of the team incharge keeping the operation of Cornershop until is fully merged with Uber's groseries strategy",
+        "I was responsable of helping multiple teams to keep the operation running by fixing bugs and creating new features"
       ],
     },
   ],
