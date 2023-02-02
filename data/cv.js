@@ -80,15 +80,18 @@ const cvData = {
       website: "https://www.falabella.com",
       startDate: "2015-09-01",
       endDate: "2017-05-01",
-      summary: "",
-      highlights: [],
+      summary: "Software engineer in Falabella's coorporative marketing team in Chile. My main job was to create tools for the local teams on each country in which Falabella had a presence. Also, I helped local teams with their needs.",
+      highlights: [
+        "I worked on the team that rewrote Falabella's ecommerce in React",
+        "I created multiple tools that helped local teams to create hard sell landing pages faster"
+      ],
     },
     {
       company: "Adessa Falabella",
       position: "Frontend Developer",
       startDate: "2017-05-01",
       endDate: "2018-06-01",
-      summary: "",
+      summary: "I was part of one of the teams that was responsable for developing new features on the entire checkout process used by Falabella's ecommerce",
       highlights: [],
     },
     {
@@ -101,22 +104,16 @@ const cvData = {
       highlights: [],
     },
     {
-      company: "Mediastream",
-      position: "React Developer",
-      website: "https://www.mediastre.am/",
-      startDate: "2018-11-26",
-      endDate: "2019-04-01",
-      summary: "",
-      highlights: [],
-    },
-    {
       company: "Cornershop by Uber",
       position: "Frontend Engineer",
       website: "https://cornershopapp.com",
       startDate: "2019-04-01",
       endDate: "2020-08-01",
-      summary: "",
-      highlights: [],
+      summary: "I was the first frontend enginner in Cornershop's operations team that was responsable of creating internal tools to manage their entire operation.",
+      highlights: [
+        "Develop tens of internal applications to facilate operations team's work",
+        "Help with the hiring process of new frontend engineers creating a team from scratch"
+      ],
     },
     {
       company: "Cornershop by Uber",
