@@ -4,16 +4,16 @@ export default () => (
   <ul className="socialNetworks">
     <p>You can see a little bit of my work in these places:</p>
     <li>
-      <Link href="https://github.com/raerpo"><a>Github</a></Link>
+      <Link href="https://github.com/raerpo">Github</Link>
     </li>
     <li>
-      <Link href="https://codepen.io/raerpo"><a>Codepen</a></Link>
+      <Link href="https://codepen.io/raerpo">Codepen</Link>
     </li>
     <li>
-      <Link href="https://codesandbox.io/u/raerpo"><a>CodeSandbox</a></Link>
+      <Link href="https://codesandbox.io/u/raerpo">CodeSandbox</Link>
     </li>
     <li>
-      <Link href="https://twitter.com/raerpo"><a>Twitter</a></Link>
+      <Link href="https://twitter.com/raerpo">Twitter</Link>
     </li>
     <style jsx>
     {`
