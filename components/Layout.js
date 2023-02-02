@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import ReactGA from "react-ga";
 
@@ -36,17 +36,17 @@ const buildTitle = (title) => {
 };
 
 const Layout = ({ children, title }) => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     ReactGA.initialize("UA-61536258-1");
     ReactGA.send("pageview");
-  });
+  }, []);
   return (
     <main>
       <Head title={buildTitle(title)} />
       <header>
         <div className="logo">
           <Link href={routes.HOME}>
-            <a>🏠</a>
+            🏠
           </Link>
         </div>
         <HeaderLinks />

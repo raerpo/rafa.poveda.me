@@ -5,12 +5,12 @@ export default () => (
   <ul>
     <li>
       <Link href={ routes.CV }>
-        <a>CV</a>
+        CV
       </Link>
     </li>
     <li>
       <Link href={ routes.BLOG }>
-        <a>Blog</a>
+        Blog
       </Link>
     </li>
     <style jsx>
