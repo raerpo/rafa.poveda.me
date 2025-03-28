@@ -1,10 +1,11 @@
-import { format, parse, parseISO } from "date-fns";
+'use client';
 
-import Layout from "components/Layout";
+import Layout from 'components/Layout';
+import WorkPlace from 'components/WorkPlace';
+import Education from 'components/Education';
 
-import cvData from "data/cv";
-
-const FORMAT_DATE = "MMM yyyy";
+import cvData from 'data/cv';
+import { useState } from 'react';
 
 const getPDFVersion = () => {
   window.print();
@@ -28,7 +29,7 @@ const CV = () => {
             {basics.email}
           </a>
           <p className="location">
-            Currently living in {basics.location.city},{" "}
+            Currently living in {basics.location.city},{' '}
             {basics.location.country}.
             <br />
             {basics.location.countryFlag}
@@ -56,10 +57,10 @@ const CV = () => {
             {renderContact(basics.profiles)}
           </div>
 
-          <div className="cv-section">
+          {/* <div className="cv-section">
             <h3>Where you can see my open source work?</h3>
             {renderOpenSourceProjects(projects)}
-          </div>
+          </div> */}
 
           <div className="cv-section">
             <h3>What have i talked about?</h3>
@@ -99,7 +100,7 @@ const CV = () => {
           }
           @media screen and (max-width: 600px) {
             .cv-wrapper {
-              padding: 4rem 2em;
+              padding: 4rem 1em;
             }
           }
           @media print {
@@ -165,92 +166,18 @@ const CV = () => {
 
 export default CV;
 
-const renderWorkExperience = (jobs) => {
+const renderWorkExperience = jobs => {
   return (
     <div className="cv-work-places-wrapper">
-      {jobs
-        .map((job) => {
-          return (
-            <div
-              className="cv-work-place"
-              key={`${job.company} - ${job.position}`}
-            >
-              <h4 className="company">{job.company}</h4>
-              <p className="job-title">{job.position}</p>
-              <p className="job-description">{job.summary}</p>
-              {job.highlights && job.highlights.length > 0 && (
-                <ul className="job-highlights">
-                  {job.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
-              )}
-              <div className="job-dates">
-                <span className="start-date">
-                  {format(parseISO(`${job.startDate}T00:00:00`), FORMAT_DATE)}
-                </span>
-                <span className="end-date">
-                  {job.endDate
-                    ? format(parseISO(`${job.endDate}T00:00:00`), FORMAT_DATE)
-                    : "Currently"}
-                </span>
-              </div>
-            </div>
-          );
-        })
-        .reverse()}
+      {jobs.reverse().map(job => (
+        <WorkPlace key={`${job.position}-${job.company}`} {...job} />
+      ))}
       <style jsx>
         {`
           .cv-work-places-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-          }
-          .cv-work-place {
-            margin-bottom: 2em;
-            width: 100%;
-          }
-          .cv-work-place:before {
-            content: "";
-            background-image: url("/arrow.svg");
-            background-repeat: no-repeat;
-            width: 25px;
-            height: 25px;
-            display: block;
-            transform: rotate(-90deg) translateX(1rem);
-          }
-          .cv-work-place:first-child:before {
-            display: none;
-          }
-          .company {
-            margin: 0px;
-            color: hsl(204, 3%, 35%);
-          }
-          .job-title {
-            margin: 0.2em 0px 0px 0px;
-            font-size: 0.95em;
-          }
-          .job-description {
-            font-size: 0.85em;
-            text-align: justify;
-          }
-          .job-highlights {
-            font-size: 0.85em;
-            padding: 0;
-            padding-left: 1rem;
-          }
-          .job-dates {
-            font-size: 0.85em;
-          }
-          .job-dates .start-date {
-            display: block;
-          }
-          .job-dates .start-date:before {
-            content: "From: ";
-            font-weight: bolder;
-          }
-          .job-dates .end-date:before {
-            content: "Until: ";
-            font-weight: bolder;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0.5rem;
           }
         `}
       </style>
@@ -258,46 +185,17 @@ const renderWorkExperience = (jobs) => {
   );
 };
 
-const renderEducation = (studies) => {
-  return studies.map((study, index) => (
-    <div className="cv-study-place" index={index}>
-      <h4 className="university">{study.institution}</h4>
-      <p className="career">{study.area}</p>
-      {study.project && (
-        <p className="study-project">
-          {study.project.name} - {study.project.grade}
-        </p>
-      )}
-      <div className="study-dates">
-        <span className="start-date">{study.startDate}</span>
-        <span className="end-date">{study.endDate}</span>
-      </div>
-      <style jsx>
-        {`
-          .university {
-            color: hsl(204, 3%, 35%);
-          }
-          .study-dates {
-            font-size: 0.85em;
-          }
-          .study-dates .start-date {
-            display: block;
-          }
-          .study-dates .start-date:before {
-            content: "From: ";
-            font-weight: bolder;
-          }
-          .study-dates .end-date:before {
-            content: "Until: ";
-            font-weight: bolder;
-          }
-        `}
-      </style>
+const renderEducation = studies => {
+  return (
+    <div className="cv-education-wrapper">
+      {studies.map(study => {
+        return <Education key={study.institution} {...study} />;
+      })}
     </div>
-  ));
+  );
 };
 
-const renderContact = (profiles) => {
+const renderContact = profiles => {
   return (
     <div className="cv-profiles-wrapper">
       {profiles.map((profile, index) => (
@@ -332,7 +230,7 @@ const renderContact = (profiles) => {
   );
 };
 
-const renderOpenSourceProjects = (projects) => {
+const renderOpenSourceProjects = projects => {
   return (
     <div className="cv-projects-wrapper">
       {projects.map((project, index) => (
@@ -386,7 +284,7 @@ const renderOpenSourceProjects = (projects) => {
           }
           .url-demo:before,
           .url-repository:before {
-            content: "";
+            content: '';
             display: inline-block;
             width: 20px;
             height: 20px;
@@ -395,14 +293,14 @@ const renderOpenSourceProjects = (projects) => {
             margin-right: 0.3rem;
             transform: translateY(0.2rem);
           }
-          [class*="url-"] {
+          [class*='url-'] {
             margin-bottom: 0.4rem;
           }
           .url-demo:before {
-            background-image: url("/link.svg");
+            background-image: url('/link.svg');
           }
           .url-repository:before {
-            background-image: url("/github.svg");
+            background-image: url('/github.svg');
           }
           .techs {
             padding-left: 1em;
@@ -417,13 +315,15 @@ const renderOpenSourceProjects = (projects) => {
   );
 };
 
-const renderTalks = (talks) => {
+const renderTalks = talks => {
   return (
     <div className="cv-talks-wrapper">
       {talks.map((talk, index) => (
         <div className="cv-talk" key={index}>
-          <h4 className="talk-name">{talk.name}</h4>
-          <a href={talk.url}>Slides</a>
+          <div className="cv-talk__title">
+            <h4 className="talk-name">{talk.name}</h4>-
+            <a href={talk.url}>Slides</a>
+          </div>
           <p className="project-description">{talk.description}</p>
         </div>
       ))}
@@ -434,23 +334,22 @@ const renderTalks = (talks) => {
             flex-wrap: wrap;
           }
           .cv-talk {
-            width: calc(100% / 2 - 3em);
             padding-right: 3em;
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 1rem;
           }
-          @media screen and (max-width: 215mm) {
-            .cv-talks-wrapper {
-              display: block;
-            }
-            .cv-talk {
-              width: 100%;
-              margin-bottom: 3em;
-            }
+          .cv-talk__title {
+            display: flex;
+            gap: 1rem;
           }
           .cv-talk a {
             color: inherit;
           }
           .cv-talk .talk-name {
-            margin: 0px 0px 0.5em 0px;
+            margin: 0;
+            color: var(--primary-color);
           }
         `}
       </style>

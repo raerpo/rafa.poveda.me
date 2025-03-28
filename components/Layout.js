@@ -1,26 +1,34 @@
-import React, { useEffect } from "react";
-import Link from "next/link";
-import ReactGA from "react-ga";
+import React, { useEffect } from 'react';
+import Link from 'next/link';
+import ReactGA from 'react-ga';
 
-import Head from "./Head";
-import HeaderLinks from "./HeaderLinks";
-import * as routes from "routes";
+import Head from './Head';
+import HeaderLinks from './HeaderLinks';
+import * as routes from 'routes';
 
 const GlobalStyles = () => (
   <style jsx global>
     {`
+      :root {
+        --primary-color: rgba(255, 107, 75, 0.8);
+      }
       body {
-        font-family: "Ubuntu", sans-serif, arial;
+        font-family: 'Ubuntu', sans-serif, arial;
         color: #494c4e;
         -webkit-font-smoothing: antialiased;
         background-color: #f8f7fc;
+      }
+      @media screen and (max-width: 600px) {
+        body {
+          margin: 0;
+        }
       }
       .highlight {
         position: relative;
       }
       .highlight:before {
-        content: "";
-        background-color: rgba(255, 107, 75, 0.8);
+        content: '';
+        background-color: var(--primary-color);
         width: 100%;
         height: 0.08em;
         position: absolute;
@@ -30,24 +38,22 @@ const GlobalStyles = () => (
   </style>
 );
 
-const buildTitle = (title) => {
-  const defaultTitle = "Rafael Poveda - Frontend Dev";
+const buildTitle = title => {
+  const defaultTitle = 'Rafael Poveda - Frontend Dev';
   return title ? `${title} - ${defaultTitle}` : defaultTitle;
 };
 
 const Layout = ({ children, title }) => {
   useEffect(() => {
-    ReactGA.initialize("UA-61536258-1");
-    ReactGA.send("pageview");
+    ReactGA.initialize('UA-61536258-1');
+    ReactGA.send('pageview');
   }, []);
   return (
     <main>
       <Head title={buildTitle(title)} />
       <header>
         <div className="logo">
-          <Link href={routes.HOME}>
-            🏠
-          </Link>
+          <Link href={routes.HOME}>🏠</Link>
         </div>
         <HeaderLinks />
       </header>
