@@ -20,7 +20,9 @@ const CV = () => {
           Want the PDF version?
         </a>
 
-        <p className="call-me">Want to call me? +56996665537</p>
+        <p className="call-me">
+          Want to call me? +56996665537 or +573219250747
+        </p>
 
         <div className="cv-title">
           <h1>{basics.name}</h1>
