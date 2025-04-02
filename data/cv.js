@@ -17,20 +17,16 @@ const cvData = {
     },
     profiles: [
       {
-        network: 'Email: raerpo@gmail.com',
+        network: 'raerpo@gmail.com',
         url: 'mailto:raerpo@gmail.com',
       },
       {
-        network: 'Website: http://rafa.poveda.me',
-        url: 'mailto:raerpo@gmail.com',
+        network: 'rafa.poveda.me',
+        url: 'https://rafa.poveda.me',
       },
       {
         network: 'Linkedin',
         url: 'https://www.linkedin.com/in/raerpo/',
-      },
-      {
-        network: 'Twitter',
-        url: 'http://twitter.com/raerpo',
       },
       {
         network: 'Github',

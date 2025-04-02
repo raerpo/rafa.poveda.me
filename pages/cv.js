@@ -5,21 +5,12 @@ import WorkPlace from 'components/WorkPlace';
 import Education from 'components/Education';
 
 import cvData from 'data/cv';
-import { useState } from 'react';
-
-const getPDFVersion = () => {
-  window.print();
-};
 
 const CV = () => {
-  const { basics, work, education, projects, talks } = cvData;
+  const { basics, work, education, talks } = cvData;
   return (
-    <Layout title="Curriculum Vitae">
+    <Layout title="Curriculum Vitae" hideHeader>
       <section className="cv-wrapper">
-        <a href="" onClick={getPDFVersion} className="pdf-download">
-          Want the PDF version?
-        </a>
-
         <p className="call-me">
           Want to call me? +56996665537 or +573219250747
         </p>
@@ -74,8 +65,8 @@ const CV = () => {
       <style jsx>
         {`
           .cv-wrapper {
-            width: 215mm;
-            margin: 0 auto;
+            width: 80vw;
+            margin: 4rem auto;
             background: white;
             padding: 4rem 5rem;
             box-sizing: border-box;

@@ -43,20 +43,23 @@ const buildTitle = title => {
   return title ? `${title} - ${defaultTitle}` : defaultTitle;
 };
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, hideHeader = false }) => {
   useEffect(() => {
     ReactGA.initialize('UA-61536258-1');
     ReactGA.send('pageview');
   }, []);
+
   return (
     <main>
       <Head title={buildTitle(title)} />
-      <header>
-        <div className="logo">
-          <Link href={routes.HOME}>🏠</Link>
-        </div>
-        <HeaderLinks />
-      </header>
+      {!hideHeader && (
+        <header>
+          <div className="logo">
+            <Link href={routes.HOME}>🏠</Link>
+          </div>
+          <HeaderLinks />
+        </header>
+      )}
       <section>{children}</section>
       <style jsx>
         {`

@@ -12,9 +12,6 @@ export default () => (
     <li>
       <Link href="https://codesandbox.io/u/raerpo">CodeSandbox</Link>
     </li>
-    <li>
-      <Link href="https://twitter.com/raerpo">Twitter</Link>
-    </li>
     <style jsx>
       {`
         .socialNetworks {
